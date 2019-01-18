@@ -193,6 +193,7 @@ nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:fo
 }
 /* Carousel */
 .home .carousel {
+    width: 100%;
     position: relative;
     height: 700px;
     display: inline-block;
