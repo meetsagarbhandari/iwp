@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="service_item">
-                            <img src="images/terrace.png" alt="Our Services">
+                            <img src="images/terrace.png" alt="Our Services" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
                             <h3>Terrace and roof</h3>
                         </div>
                     </div>
@@ -177,66 +177,261 @@
                     </div>
                 </div>
             </div>
+			<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="img/swm1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="img/swm2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="img/swm3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="img/swm4.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="img/swm1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/swm2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/swm3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img/swm4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+<script>
+function openModal() {
+  document.getElementById('myModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('myModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
         </section>
-		<!-- Services end -->
-
-
-        
+		<!-- Services end -->     
 
         <!-- Portfolio -->
         <section id="portfolio">
-            <div class="container portfolio_area text-center">
-                <h2>Made with Perfection</h2>
-                <p style="font-size: 20px;">Take a look at some of our projects images. Specialities in all types of old &amp; New building’s waterproofing.</p>
+			<div class="container portfolio_area text-center">                
                 <div id="filters">
-                    <button class="button is-checked" data-filter="*">Show All</button>
-                    <button class="button" data-filter=".buildings">Terrace and roofs</button>
-                    <button class="button" data-filter=".interior">Tanks</button>
-                    <button class="button" data-filter=".isolation">Expansion Joints</button>
-                    <button class="button" data-filter=".plumbing">Garden Area</button>
+                    <button class="button is-checked" data-filter=".major">All Projects</button>
+                    <button class="button" data-filter=".bramha">bramhacorp</button>
+                    <button class="button" data-filter=".amn">amanora</button>
+                    <button class="button" data-filter=".ary">dreams aryan</button>
+                    <button class="button" data-filter=".metro">pune metro</button>
                 </div>
                 <!-- Portfolio grid -->		
                 <div class="grid">
+					<!--bramha-->
                     <div class="grid-sizer"></div>
-                    <div class="grid-item grid-item--width2 grid-item--height2 buildings plumbing interior">
-                        <img alt="" src="images/highligh_img.jpg" >
+                    <div class="grid-item grid-item bramha major">
+                        <img alt="" src="images/bramha.jpg" >
                         <div class="portfolio_hover_area">
-                            <a class="fancybox" href="images/highligh_img.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a class="fancybox" href="images/bramha.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
                         </div>  
                     </div>
-
-                    <div class="grid-item buildings interior isolation">
-                        <img alt="" src="images/portfolio1.jpg" >
+					<div class="grid-sizer"></div>
+                    <div class="grid-item grid-item bramha">
+                        <img alt="" src="images/bramha2.jpg" >
                         <div class="portfolio_hover_area">
-                            <a class="fancybox" href="images/portfolio1.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a class="fancybox" href="images/bramha2.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+					<div class="grid-sizer"></div>
+                    <div class="grid-item grid-item bramha">
+                        <img alt="" src="images/bramha3.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/bramha3.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+					<div class="grid-item grid-item bramha">
+                        <img alt="" src="images/bramha4.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/bramha4.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>  
+                    </div>
+					<!--bramha-->
+					
+					<!--amn-->
+                    <div class="grid-item amn major">
+                        <img alt="" src="images/amn.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/amn.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
                         </div>   
                     </div>
-
-                    <div class="grid-item interior plumbing isolation">
-                        <img alt="" src="images/portfolio2.jpg" >
+					<div class="grid-item amn">
+                        <img alt="" src="images/amn2.jpg" >
                         <div class="portfolio_hover_area">
-                            <a class="fancybox" href="images/portfolio2.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a class="fancybox" href="images/amn2.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
-                        </div>  
+                        </div>   
                     </div>
-
-                    <div class="grid-item isolation buildings">
-                        <img alt="" src="images/portfolio3.jpg" >
+					<div class="grid-item amn">
+                        <img alt="" src="images/amn3.jpg" >
                         <div class="portfolio_hover_area">
-                            <a class="fancybox" href="images/portfolio3.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a class="fancybox" href="images/amn3.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
-                        </div>  
+                        </div>   
                     </div>
-
-                    <div class="grid-item plumbing isolation">
-                        <img alt="" src="images/portfolio4.jpg" >
+					<div class="grid-item amn">
+                        <img alt="" src="images/amn4.jpg" >
                         <div class="portfolio_hover_area">
-                            <a class="fancybox" href="images/portfolio4.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a class="fancybox" href="images/amn4.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
                             <a href="#"><span class="fa fa-link"></span></a>
-                        </div>  
+                        </div>   
                     </div>
+					<div class="grid-item amn">
+                        <img alt="" src="images/amn5.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/amn5.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<!--amn-->
+					
+					<!--ary-->
+					<div class="grid-item ary major">
+                        <img alt="" src="images/ary.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/ary.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item ary">
+                        <img alt="" src="images/ary2.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/ary.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item ary">
+                        <img alt="" src="images/ary3.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/ary.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item ary">
+                        <img alt="" src="images/ary4.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/ary.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item ary">
+                        <img alt="" src="images/ary5.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/ary.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<!--ary-->
+					
+					<!--metro-->
+					<div class="grid-item metro major">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item metro">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro2.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item metro">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro3.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item metro">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro4.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item metro">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro5.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<div class="grid-item metro">
+                        <img alt="" src="images/metro.jpg" >
+                        <div class="portfolio_hover_area">
+                            <a class="fancybox" href="images/metro6.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><span class="fa fa-search"></span></a>
+                            <a href="#"><span class="fa fa-link"></span></a>
+                        </div>   
+                    </div>
+					<!--metro-->
+
                 </div><!-- Portfolio grid end -->
             </div>
         </section><!-- Portfolio end -->
@@ -286,7 +481,8 @@
                         <h2>Do you have any questions?</h2>
                         <h2 class="second_heading">Feel free to contact us!</h2>
                     </div>
-                    <form name="contactform" method="post" action="send_form_email.php" role="form" class="form-inline text-right col-md-6" >
+                    <form name="contactform" method="post" action="" role="form" class="form-inline text-right col-md-6" >
+                    <form name="contactform" method="post" action="" role="form" class="form-inline text-right col-md-6" >
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Name">
                         </div>

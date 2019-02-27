@@ -35,9 +35,9 @@
                             <h4>Contact us</h4>
                             <ul class="list-unstyled footer_contact">
                                 <li><a href=""><span class="fa fa-map-marker"></span><p>Plot No 10, Ninad Society,<br/>43/8, Vadgaon Sheri,<br/>Pune - 411014, Maharashtra</p></a></li>
-                                <li><a href=""><span class="fa fa-envelope"></span><p>internationalwaterproofing@rediffmail.com</p></a></li>
-                                <li><a href=""><span class="fa fa-mobile"></span><p> +91 9850521786 <br/>+91 9284737194</p></a></li>
-                            </ul>
+                                <li><a href="mailto:internationalwaterproofing@rediffmail.com"><span class="fa fa-envelope"></span><p>internationalwaterproofing@rediffmail.com</p></a></li>
+                                <li><a href="tel:9850521786"><span class="fa fa-mobile"></span><p> +91 9850521786</p></a></li>
+								<li><a href="tel:9284737194"><span class="fa fa-mobile"></span><p> +91 9284737194</p></a></li>
                         </div>
                     </div>
                 </div>
